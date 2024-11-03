@@ -71,7 +71,7 @@ def sigmoid(x: float) -> float:
 
 
 def relu(x: float) -> float:
-    return max(0, x)
+    return max(0., x)
 
 
 def log(x: float) -> float:
@@ -95,7 +95,7 @@ def inv_back(x: float, d: float) -> float:
 
 
 def relu_back(x: float, d: float) -> float:
-    return d if x > 0 else 0
+    return d if x > 0 else 0.
 
 
 # ## Task 0.3
