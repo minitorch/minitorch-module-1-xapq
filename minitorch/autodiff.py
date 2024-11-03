@@ -65,7 +65,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
     """
     ordered_vars = []
     sorted_ids = set()
-    
+
     def topsort(var: Variable):
         if not var.is_leaf():
             for parent in var.parents:
