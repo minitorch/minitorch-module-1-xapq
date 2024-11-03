@@ -111,7 +111,7 @@ class Scalar:
 
     def __neg__(self) -> Scalar:
         return Neg.apply(self)
-    
+
     def __radd__(self, b: ScalarLike) -> Scalar:
         return self + b
 

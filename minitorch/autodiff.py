@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Iterable, List, Tuple
+from typing import Any, Iterable, Tuple
 from collections import defaultdict
 
 from typing_extensions import Protocol
@@ -65,6 +65,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
     """
     ordered_vars = []
     sorted_ids = set()
+    
     def topsort(var: Variable):
         if not var.is_leaf():
             for parent in var.parents:
@@ -72,7 +73,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
                     topsort(parent)
         sorted_ids.add(var.unique_id)
         ordered_vars.append(var)
-    
+
     topsort(variable)
     return ordered_vars
 
